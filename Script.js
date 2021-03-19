@@ -11,9 +11,7 @@ let popolation = 1.35;
 let contitant = "Asia";
 
 // lecture 2 
-console.log(country);
-console.log(popolation);
-console.log(contitant);
+console.log(country, popolation, contitant);
 
 let isIsland = false;
 let language;
