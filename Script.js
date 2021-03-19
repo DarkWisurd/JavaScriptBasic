@@ -100,4 +100,152 @@ console.log("i'm " + 23 + " YO")
 console.log('23' - '10' - 3);
 console.log('23' + '10' + 3);
 console.log('23' * '2');
-console.log('23' / '2')
+console.log('23' / '2');
+/*
+Truthy And Falsy values*/
+
+/* 5 falsy values of javascript:
+1)0
+2) ""
+3)undefined
+4)null
+5)NaN
+*/
+
+
+console.log(Boolean(0))
+console.log(Boolean(undefined))
+console.log(Boolean("vedant"))
+console.log(Boolean({}))
+
+
+
+const money = 100000000000000000000000000000000000000000000000000000000000000000000000;
+if (money) {
+    console.log("Don's spend it all");
+}
+else {
+    console.log("go get a job and come back when you have money");
+
+}
+
+// equality opretors(==/===)
+
+const whyAreWeUsingAgeAllTheTime = 18;
+if (whyAreWeUsingAgeAllTheTime === 18) console.log("you just became an adult :D (strict)");
+if (whyAreWeUsingAgeAllTheTime == 18) console.log("you just became an adult :D (loose)");
+
+
+const whyAreWeUsingAgeAllTheTimeStringItIs = "18";
+if (whyAreWeUsingAgeAllTheTimeStringItIs === 18) console.log("you just became an adult :D (strict)");
+if (whyAreWeUsingAgeAllTheTimeStringItIs == 18) console.log("you just became an adult :D (loose)");
+
+//pretend that "==" dosent even exists
+
+//creating somthing instresting with promp though i dont know what that means
+
+
+// const username = prompt("enter username");
+
+// if (username === "deshpandevedant37@gmail.com") {
+//     alert("correct!");
+// }
+// else if (username === "chaitanyamegha@gmail.com") {//we can use else if as many times as we want in one if block
+//     alert("correct!");
+// }
+// else {
+//     alert("username or password incorrect")
+// }
+// const password = prompt("enter password");
+// if (password === "Vedant@37") {
+//     alert("correct")
+// }
+// else {
+//     alert("username or password incorrect")
+// }
+
+
+// Logical opretors
+
+const hasDrivingLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDrivingLicense && hasGoodVision);
+// hasGoodVision = true;
+// hasDrivingLicense = false;
+console.log(hasDrivingLicense && hasGoodVision);
+console.log(hasDrivingLicense || hasGoodVision);
+console.log(!hasDrivingLicense);
+
+
+const shouldDrive = hasDrivingLicense && hasGoodVision;
+
+if (shouldDrive) {
+    console.log("you are able to drive!")
+}
+else {
+    console.log("let someone else drive you are too young!")
+}
+
+//we most lickly use this rather than the one that is up
+if (hasDrivingLicense && hasGoodVision) {
+    console.log("you are able to drive!")
+}
+else {
+    console.log("let someone else drive you are too young!")
+}
+
+
+const isTired = true;
+console.log(hasDrivingLicense || hasGoodVision || isTired);
+
+console.log(hasDrivingLicense && hasGoodVision && isTired);
+
+if (hasDrivingLicense && hasGoodVision && !isTired) {
+    console.log("you are able to drive!")
+}
+else {
+    console.log("let someone else drive !")
+}
+
+
+
+
+// The Switch Statement 
+
+const day = "monday";
+
+switch (day) {
+    case "monday":
+        console.log("somthing important");
+        console.log("Classes");
+        break;
+    case "tuesday":
+        console.log("JavaScript")
+        break;
+    case "wenesday":
+    case "thuresday":
+    case "fryday":
+    case "saturday":
+    case "sunday":
+        console.log("Maths");
+        break;
+    default:
+        console.log("you are not from this world there are only 7 days!");
+
+}
+
+if (day === 'monday') {
+    console.log("IDK");
+    console.log("IDK");
+} else if (day === 'tuesday') {
+    console.log("IDK");
+} else if (day === 'wednesday' || day === 'thursday') {
+    console.log("IDK");
+} else if (day === 'friday') {
+    console.log("IDK");
+} else if (day === 'saturday' || day === 'sunday') {
+    console.log("IDK");
+} else {
+    console.log('you are not from this world there are only 7 days!');
+}
