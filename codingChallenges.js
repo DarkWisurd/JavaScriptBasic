@@ -71,3 +71,10 @@ else if (scoreKoalas > teamDolphin && scoreKoalas >= 100) {
 else if (teamDolphin === scoreKoalas || teamDolphin < 100 || scoreKoalas < 100) {
     console.log("it's a tie!")
 }
+
+
+// coding challlenge 4
+
+const bill = 275;
+const tip = bill >= 50 ? bill / 100 * 15 : bill / 100 * 15;
+console.log(`bill=${bill} tip = ${tip} total amount = ${bill + tip}`)
