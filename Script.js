@@ -247,3 +247,28 @@ if (day === 'monday') {
 } else {
     console.log('you are not from this world there are only 7 days!');
 }
+console.log("just cheaking");
+
+
+// The Conditional (Ternary) Operator 
+
+const seeWeAreAlwaysUsengAge = 14;
+seeWeAreAlwaysUsengAge >= 18 ? console.log("i like to drink wine") : console.log("I like to drink water ");// not used as much
+
+const drink = seeWeAreAlwaysUsengAge >= 18 ? "Wine" : "Water"; // More Prefered 
+console.log(drink);
+
+let drink2;
+// if - else virsion
+if (seeWeAreAlwaysUsengAge >= 18) {
+    drink2 = "wine"
+}
+else {
+    drink2 = "water"
+}
+
+console.log(drink2);
+
+// Template litral virsion
+
+console.log(`I like to drink ${seeWeAreAlwaysUsengAge >= 18 ? "Wine" : "Water"}`)
