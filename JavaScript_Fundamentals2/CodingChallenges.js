@@ -58,7 +58,7 @@ const bill = 275;
 // console.log(`bill=${bill} tip = ${tip} total amount = ${bill + tip}`)
 
 function calcTip(bill) {
-    const tip = bill >= 50 ? bill / 100 * 15 : bill / 100 * 15;
+    const tip = bill >= 50 ? bill / 100 * 20 : bill / 100 * 15;
     return tip;
 }
 const bills = [125, 555, 44];
