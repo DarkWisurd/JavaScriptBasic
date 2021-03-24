@@ -309,4 +309,63 @@ const vedant1 = {
     job: "student",
     friends: ["vedant", "soham", "atharva"]
 }
-console.log(vedant1)
+//Dot vs. Bracket Notation
+console.log(vedant1);
+
+//dot notation
+console.log(vedant1.lastName)
+
+//Braket notation
+console.log(vedant1["lastName"])
+
+
+//anuja
+const person = {
+    anuja: {
+        firstName: "anuja",
+        lastName: "chaytanya",
+        phNumber: 4567465765
+    },
+    vedant: {
+        firstName: "vedant",
+        lastName: "deshpande",
+        phNumber: 9146178510
+    }
+}
+
+console.log(person.anuja)
+
+
+
+// back to course
+
+const nameKey = "Name"
+
+console.log(vedant1["first" + nameKey]);// we can put any exprection in bracket notation
+console.log(vedant1["last" + nameKey]);
+
+// console.log(vedant1."last" + nameKey); // will not work
+
+
+
+
+const inputInfo = prompt("what do you want to know about vedant choose between firstName Lastname age job friends");
+
+switch (inputInfo) {
+    case "firstName":
+        console.log(vedant1["firstName"]);
+        break;
+    case "lastName":
+        console.log(vedant1["lastName"]);
+        break;
+    case "age":
+        console.log(vedant1["age"]);
+    case "friends":
+        console.log(vedant["friends"]);
+        break;
+    default:
+        console.log("sorry you have selected the wrong sentence make sure you have wrriten spellings correctly");
+}
+
+
+
