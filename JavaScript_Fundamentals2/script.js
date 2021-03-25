@@ -349,23 +349,103 @@ console.log(vedant1["last" + nameKey]);
 
 
 
-const inputInfo = prompt("what do you want to know about vedant choose between firstName Lastname age job friends");
+// const inputInfo = prompt("what do you want to know about vedant choose between firstName Lastname age job friends");
 
-switch (inputInfo) {
-    case "firstName":
-        console.log(vedant1["firstName"]);
-        break;
-    case "lastName":
-        console.log(vedant1["lastName"]);
-        break;
-    case "age":
-        console.log(vedant1["age"]);
-    case "friends":
-        console.log(vedant["friends"]);
-        break;
-    default:
-        console.log("sorry you have selected the wrong sentence make sure you have wrriten spellings correctly");
+// if (vedant1[inputInfo]) {
+//     console.log(vedant1[inputInfo]);
+// }
+// else { // removed cause it was getting annoying
+//     console.log("not in object please cheak the spelling");
+// }
+// switch (inputInfo) {
+//     case "firstName":
+//         console.log(vedant1["firstName"]);
+//         break;
+//     case "lastName":
+//         console.log(vedant1["lastName"]);
+//         break;
+//     case "age":
+//         console.log(vedant1["age"]);
+//     case "friends":
+//         console.log(vedant["friends"]);
+//         break;
+//     default:
+//         console.log("sorry you have selected the wrong sentence make sure you have wrriten spellings correctly");
+// }
+
+// adding new property to an object
+
+vedant1.location = "india";
+vedant1["ph. no."] = 9146178510;
+console.log(vedant1)
+
+
+// challenge
+
+console.log(`${vedant1.firstName} has ${vedant1.friends.length} friends ${vedant1.friends} and his best friend is ${vedant1.friends[0]} `)
+
+
+//  Object Methods
+
+const newVedant = {
+    firstName: "vedant",
+    lastName: "deshpande",
+    birthYear: 2007,
+    job: "student",
+    friends: ["vedant", "soham", "atharva"],
+    hasDriversLicense: true,
+
+    calcAge: function () {// function decleratation will not work 
+        return 2037 - this.birthYear;// this reffers to this object this. works the same as nameOfObject.anything like newVedant.games="frotnite"; can also be wrriten as this.games="fortnite";
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()} years ${this.job} and he ${this.hasDriversLicense ? "has" : "dont"}  an driving licence`
+    }
 }
+console.log(newVedant.calcAge());
+
+//challenge
 
 
+console.log(newVedant.getSummary())
+
+
+
+///////////////////////////////////////
+// Coding Challenge #3
+
+/*
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+GOOD LUCK 😀
+*/
+
+const Mark = {
+    firstName: "Mark",
+    Mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.BMI = this.Mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+const John = {
+    firstName: "Jhon",
+    Mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.BMI = this.Mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+if (Mark.calcBMI() > John.calcBMI()) {
+    console.log("Mark's BMI is higher")
+}
+else {
+    console.log("Jhon's BMI is higher")
+}
 
