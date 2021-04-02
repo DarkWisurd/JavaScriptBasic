@@ -269,7 +269,7 @@ console.log(friend2.includes("vedant"))
 
 /*
 Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
-1. Write a function 'calcTip' that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
+1. Write a function 'calcTip100000' that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
 2. And now let's use arrays! So create an array 'bills' containing the test data below.
 3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before.
 4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
@@ -278,22 +278,22 @@ HINT: Remember that an array needs a value in each position, and that value can 
 GOOD LUCK 😀
 */
 
-const bill = 275;
-// const tip = bill >= 50 ? bill / 100 * 15 : bill / 100 * 15;
-// console.log(`bill=${bill} tip = ${tip} total amount = ${bill + tip}`)
+// const bill = 275;
+// // const tip = bill >= 50 ? bill / 100 * 15 : bill / 100 * 15;
+// // console.log(`bill=${bill} tip = ${tip} total amount = ${bill + tip}`)
 
-function calcTip(bill) {
-    const tip = bill >= 50 ? bill / 100 * 20 : bill / 100 * 15;
-    return tip;
-}
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[bills.length - 1])]
-// bonus
+// function calcTip100000(bill) {
+//     const tip = bill >= 50 ? bill / 100 * 20 : bill / 100 * 15;
+//     return tip;
+// }
+// const bills = [125, 555, 44];
+// const tips = [calcTip100000(bills[0]), calcTip100000(bills[1]), calcTip100000(bills[bills.length - 1])]
+// // bonus
 
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
-console.log(totals);
-console.log(tips)
+// console.log(totals);
+// console.log(tips)
 
 
 
@@ -578,7 +578,7 @@ while (dice !== 6) {
 Let's improve Steven's tip calculator even more, this time using loops!
 1. Create an array 'bills' containing all 10 test bill values
 2. Create empty arrays for the tips and the totals ('tips' and 'totals')
-3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+3. Use the 'calcTip1000' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
 TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
 HINT: Call calcTip in the loop and use the push method to add values to the tips and totals arrays 😉
 4. BONUS: Write a function 'calcAverage' which takes an array called 'arr' as an argument. This function calculates the average of all numbers in the given array. This is a DIFFICULT challenge (we haven't done this before)! Here is how to solve it:
@@ -589,25 +589,54 @@ GOOD LUCK 😀
 */
 
 
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
-for (let i = 0; i < bills.length; i++) {
-    const tip = calcTip(bills[i]);
-    tips.push(tip);
-    totals.push(tip + bills[i]);
-}
-console.log(bills, tips, totals);
-const calcAverage = function (arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
+// const calcTip100000 = function (bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip100000(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// }
+// console.log(bills, tips, totals);
+// const calcAverage = function (arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum / arr.length;
+// }
+// console.log(calcAverage([2, 3, 7]));
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+
+
+const username = "vedant";
+const password = "vedant1";
+
+let i = 3
+while (i >= 0) {
+    console.log("---username---")
+    if (username === "vedant" && password === "vedant") {
+        console.log("Correct!");
+        break;
     }
-    return sum / arr.length;
+    else if (i >= 0) {
+        console.log(`username or password incorrect you have ${i} chances left`)
+    }
+
+    i--;
 }
-console.log(calcAverage([2, 3, 7]));
-console.log(calcAverage(totals));
-console.log(calcAverage(tips));
+const usernames = ["vedant", "megha", "anuja"];
+const passwords = ["vedant", "megha", "anuja"];
+
+function unloader() {
+    let i;
+    for (i = 0; i < usernames.length; i++) {
+        console.log(usernames[i]);
+    }
+    return usernames[i];
+}
+console.log(unloader());
