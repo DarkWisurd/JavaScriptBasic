@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    font-family: Arial;
+    font-size: 18px;
+}
+h1{
+    font-size: 40px;
+}
+
+.first {
+    color: lightseagreen;
+}
+
+#your-name {
+    background-color: lightseagreen;
+    border: 5px solid #444;
+}
