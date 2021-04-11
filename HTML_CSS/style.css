@@ -2,9 +2,17 @@ body {
     background-color: black;
     font-family: Arial;
     font-size: 18px;
+    box-sizing: border-box;
+    padding: 50px ;
 }
 h1{
     font-size: 40px;
+    margin-bottom: 25px;
+}
+
+h2{
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .first {
@@ -12,6 +20,32 @@ h1{
 }
 
 #your-name {
+    align-self: center;
     background-color: lightseagreen;
     border: 5px solid #444;
+    width: 400px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+    margin-bottom: 20px;
+}
+
+input,button{
+    padding: 10px;
+    font-size: 16px;
+}
+
+#your-name h2{
+    color: black;
+}
+#Course-imag{
+    height: 1000px;
 }
