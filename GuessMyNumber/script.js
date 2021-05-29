@@ -12,6 +12,7 @@
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".again").addEventListener("click", function () {
     //location.reload(); first try
@@ -19,12 +20,16 @@ document.querySelector(".again").addEventListener("click", function () {
     document.querySelector(".number").textContent = "?"
     document.querySelector(".message").textContent = "Start guessing..."
     document.querySelector(".number").style.width = "15rem"
-    document.querySelector(".score").textContent = "20"
+    document.querySelector(".score").textContent = score;
     document.querySelector(".guess").value = "  ";
+    document.querySelector(".")
 })
+
 document.querySelector(".check").addEventListener("click", function () {
     const guess = Number((document.querySelector(".guess").value));
     console.log(guess);
+
+
 
     //No number
     if (!guess) {
@@ -37,6 +42,11 @@ document.querySelector(".check").addEventListener("click", function () {
         document.querySelector("body").style.backgroundColor = "#60b347";
         document.querySelector(".number").style.width = "30rem"
         document.querySelector(".number").textContent = secretNumber;
+        if (score > highscore) {                                           //Highscore
+            highscore = score;
+            document.querySelector(".highscore").textContent = highscore;
+        }
+
     }
 
 
@@ -71,3 +81,4 @@ document.querySelector(".check").addEventListener("click", function () {
     }
 
 })
+
