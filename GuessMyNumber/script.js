@@ -10,19 +10,23 @@
 // console.log(document.querySelector(".guess").value)
 
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+function dislpayMsg(message) {
+    document.querySelector(".message").textContent = message;
+}
+
 document.querySelector(".again").addEventListener("click", function () {
     //location.reload(); first try
-    document.querySelector("body").style.backgroundColor = "#222"
-    document.querySelector(".number").textContent = "?"
-    document.querySelector(".message").textContent = "Start guessing..."
-    document.querySelector(".number").style.width = "15rem"
-    document.querySelector(".score").textContent = score;
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    document.querySelector("body").style.backgroundColor = "#222";
+    document.querySelector(".number").textContent = "?";
+    dislpayMsg("Start guessing...");
+    document.querySelector(".number").style.width = "15rem";
+    document.querySelector(".score").textContent = score = 20;
     document.querySelector(".guess").value = "  ";
-    document.querySelector(".")
 })
 
 document.querySelector(".check").addEventListener("click", function () {
@@ -33,52 +37,68 @@ document.querySelector(".check").addEventListener("click", function () {
 
     //No number
     if (!guess) {
-        document.querySelector(".message").textContent = "⛔ No Number"
+        dislpayMsg("⛔ No Number")
     }
 
     //correct number
     else if (guess === secretNumber) {
-        document.querySelector(".message").textContent = "🎉 correct number!"
+        dislpayMsg("🎉 correct number!")
         document.querySelector("body").style.backgroundColor = "#60b347";
         document.querySelector(".number").style.width = "30rem"
         document.querySelector(".number").textContent = secretNumber;
-        if (score > highscore) {                                           //Highscore
+        if (score > highscore) {
             highscore = score;
             document.querySelector(".highscore").textContent = highscore;
         }
 
     }
 
-
-    else if (guess > secretNumber) {
-
+    //when guess is wrong
+    else if (guess !== secretNumber) {
         if (score > 1) {
 
             // Number is too high
 
-            document.querySelector(".message").textContent = "📈 Too High!";
+            document.querySelector(".message").textContent = guess > secretNumber ? "📈 Too High!" : "📉 Too Low!";
             score--;
             document.querySelector(".score").textContent = score;
         }
         else {
-            document.querySelector(".message").textContent = "💥 You lost the game"
+            dislpayMsg("💥 You lost the game")
             document.querySelector(".score").textContent = 0;
         }
     }
-    else if (guess < secretNumber) {
 
-        if (score > 1) {
+    // else if (guess > secretNumber) {
 
-            // Number is too low
-            document.querySelector(".message").textContent = "📉 Too Low!"
-            score--;
-            document.querySelector(".score").textContent = score;
-        }
-        else {
-            document.querySelector(".message").textContent = "💥 You lost the game"
-            document.querySelector(".score").textContent = 0;
-        }
-    }
+    //     if (score > 1) {
+
+    //         // Number is too high
+
+    //         document.querySelector(".message").textContent = "📈 Too High!";
+    //         score--;
+    //         document.querySelector(".score").textContent = score;
+    //     }
+    //     else {
+    //         document.querySelector(".message").textContent = "💥 You lost the game"
+    //         document.querySelector(".score").textContent = 0;
+    //     }
+    // }
+    // else if (guess < secretNumber) {
+
+    //     if (score > 1) {
+
+    //         // Number is too low
+    //         document.querySelector(".message").textContent = "📉 Too Low!"
+    //         score--;
+    //         document.querySelector(".score").textContent = score;
+    //     }
+    //     else {
+    //         document.querySelector(".message").textContent = "💥 You lost the game"
+    //         document.querySelector(".score").textContent = 0;
+    //     }
+    // }
 
 })
+
 
